@@ -1,0 +1,36 @@
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+.products {
+    font-family: oblique;
+    font-size: 20px;
+    margin: 0 0 2em 0;
+    padding: 0;
+}
+.products li {
+    list-style: inside;
+    font-family: oblique;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+button{
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+}
+button:hover {
+    background-color: #cfd8dc;
+}
+button.delete {
+    float:right;
+    margin-top: 2px;
+    margin-right: .8em;
+    background-color: gray !important;
+    color:white;
+}

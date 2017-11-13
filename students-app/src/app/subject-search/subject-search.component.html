@@ -1,0 +1,16 @@
+<div id="search-component">
+    <h4>Subject Search</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <div>
+        <div *ngFor="let sub of subject | async"
+             (click)="gotoDetail(sub)" class="search-result" >
+            {{sub.name}}
+        </div>
+    </div>
+</div>
+<!--<ul class="products">
+    <li *ngFor="let pro of subject">
+        <span class="badge">{{pro.name}}</span>
+        Price:<span>{{pro.price}}</span>
+    </li>
+</ul>-->
