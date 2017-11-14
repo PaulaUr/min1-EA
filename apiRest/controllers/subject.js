@@ -6,7 +6,7 @@ function getSubject (req, res){
     // let productId = req.params.productId
      Subject.find({ name: req.params.subjectName }, (err, subject) => {
      //  Product.findOne(productName, (err, product) =>{
-       console.log(req.params.productName)
+     //  console.log(req.params.productName)
      if (err) 
      return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
       else if(!subject)
@@ -22,7 +22,7 @@ function getSubject (req, res){
 
 function getSubjects(req,res) {
     Subject.find({}, (err, subjects) => {
-        Student.populate(subjects, {path: 'student'}, (err, subjects) => {
+       // Student.populate(subjects, {path: 'student'}, (err, subjects) => {
         if (err) 
             return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
             else if (!subjects) 
@@ -35,7 +35,7 @@ function getSubjects(req,res) {
         });
         
          
-    });  
+
 }
 
 function saveSubject(req,res){
@@ -55,35 +55,42 @@ function saveSubject(req,res){
 
               }
         });
-    
-
 }
 //Add user to Subject
 function addStudent (req, res ){
-    //let productId = req.params.productId
-  //  let productName = req.params.productName
-    //console.log(req.params.productName)
-  //  console.log(req.body)
-  //  let update = req.body
-
-    Student.find({ name: req.body.student }, (err, student) => {
-        //  Product.findOne(productName, (err, product) =>{
-          console.log(req.body.student)
+  
+  const subj = new Subject({
+    name : req.body.name,
+    student : req.body.student,
+    _id : req.body._id,
+  });
+  Subject.find({name: req.params.subjectName} ,(err,subjectInfo) => {
+    if (err) 
+    return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
+     else if(!subjectInfo)
+      return res.status(404).send({message:`El producto no existe`});
+      else{
+        req.subject = subjectInfo
+        //res.json(product)  
+        console.log('Infode la subject:',subjectInfo); 
+       
+    Student.findOne({ name: subj.student }, (err, studentInfo) => {
         if (err) 
         return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
-         else if(!student)
-          return res.status(404).send({message:`El producto no existe`});
-          else{
-          //  req.subject = subject;
-            console.log(student);
-           // res.status(200).send(product);
-           // res.json(subject);
-            Subject.update( {_id: req.params.subject_id}, {student: student._id}, (err, subjectUpdated) =>{
-               // console.log(req.params.subjectStudent)                
+         else if(!studentInfo)
+          return res.status(404).send({message:`El student no existe`});
+          if(studentInfo){
+            req.studentInfo = studentInfo;
+         console.log('Result of FIND:',studentInfo)          
+        
+            Subject.findOneAndUpdate({name: subj.name},{student: studentInfo.name} , (err, subjectUpdated) =>{
+            console.log('esto lopaso al update', studentInfo.name) 
+            console.log('la subject:',subj.name); 
+            
                 if(err){
                 return res.status(500).send({message: `Error al actualizar el producto: ${err}`});
                 }else if(!subjectUpdated)
-                  return res.status(404).send({message: 'No existe ese producto'});
+                  return res.status(404).send({message: 'No puedo actualizar esta asignatura'});
                  else{
                   console.log(subjectUpdated)
                   res.status(200).send({subject: subjectUpdated});
@@ -93,7 +100,8 @@ function addStudent (req, res ){
            
           }
             });
-
+          }
+          });
   
   }
 

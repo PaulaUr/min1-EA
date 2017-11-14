@@ -13,7 +13,7 @@ app.use(cors());
 //const user_routes = require('./routes/student');
 //middlewares de body-parser
 
-app.use(bodyParser.urlencoded({extended:false}));
+//app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 //configurar cabeceras y cors

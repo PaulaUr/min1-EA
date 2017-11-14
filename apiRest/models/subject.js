@@ -5,11 +5,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const SubjectSchema = Schema({
-    name: { type: String, lowercase:true },
+    name: { type: String },
     titulacion: String,
     cuatrimestre: String,
-    //student: String
-    student: { type: Object} 
+    student: String
+    //student: [{ type: Schema.Types.ObjectId, ref: 'Student' }]
     //{ type: Schema.ObjectId, ref: 'Student' }
 
 });
