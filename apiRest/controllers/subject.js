@@ -63,17 +63,22 @@ function addStudent (req, res ){
     name : req.body.name,
     student : req.body.student,
     _id : req.body._id,
-  });
+  });       
+
   Subject.find({name: req.params.subjectName} ,(err,subjectInfo) => {
+      //  console.log('SubjectFind: ',req.params.subjectName); 
+
     if (err) 
     return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
      else if(!subjectInfo)
       return res.status(404).send({message:`El producto no existe`});
       else{
         req.subject = subjectInfo
-        //res.json(product)  
-        console.log('Infode la subject:',subjectInfo); 
-       
+        //res.json(product)
+        console.log('Infode la subject:', subjectInfo);  
+
+        console.log('Student before StudentFind:',subj.student);  
+
     Student.findOne({ name: subj.student }, (err, studentInfo) => {
         if (err) 
         return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
@@ -82,11 +87,12 @@ function addStudent (req, res ){
           if(studentInfo){
             req.studentInfo = studentInfo;
          console.log('Result of FIND:',studentInfo)          
-        
-            Subject.findOneAndUpdate({name: subj.name},{student: studentInfo.name} , (err, subjectUpdated) =>{
+
+         
+            Subject.findOneAndUpdate({name: req.params.subjectName},{$push: {student: studentInfo.name}} , (err, subjectUpdated) =>{
             console.log('esto lopaso al update', studentInfo.name) 
-            console.log('la subject:',subj.name); 
-            
+            console.log('En el Update:',req.params.subjectName );  
+
                 if(err){
                 return res.status(500).send({message: `Error al actualizar el producto: ${err}`});
                 }else if(!subjectUpdated)
