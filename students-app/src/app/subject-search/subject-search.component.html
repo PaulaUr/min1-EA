@@ -1,3 +1,4 @@
+<body>
 <div id="search-component">
     <h4>Subject Search</h4>
     <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
@@ -7,7 +8,9 @@
             {{sub.name}}
         </div>
     </div>
+    <br>
 </div>
+</body>
 <!--<ul class="products">
     <li *ngFor="let pro of subject">
         <span class="badge">{{pro.name}}</span>

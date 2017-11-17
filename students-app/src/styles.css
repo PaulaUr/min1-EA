@@ -8,12 +8,18 @@
   border-radius: 5px;
 
 }
+body{
+  margin-left: 15px;
+  margin-right: 20px;
+
+}
 ol.subjects{
   list-style-type: decimal ;
 }
 ol li{
   padding: 10px;
   margin-left: 40px;
+
 }
 
 button {

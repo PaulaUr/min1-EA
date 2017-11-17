@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Subjects } from '../subject';
 import { Subject }           from 'rxjs/Subject';
@@ -38,8 +36,6 @@ export class SubjectSearchComponent implements OnInit {
     }
     ngOnInit(): void {
         this.subject = this.searchTerms
-            .debounceTime(300)        // wait 300ms after each keystroke before considering the term
-            .distinctUntilChanged()   // ignore if next search term is same as previous
             .switchMap(term => term   // switch to new observable each time the term changes
                 // return the http search observable
                 ? this.subjectSearchService.search(term)

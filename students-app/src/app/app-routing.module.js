@@ -10,10 +10,12 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var subjects_component_1 = require("./subject/subjects.component");
 var subject_detail_component_1 = require("./subject-detail/subject-detail.component");
+var subject_search_component_1 = require("./subject-search/subject-search.component");
 var routes = [
     { path: '', redirectTo: '/subjects', pathMatch: 'full' },
     { path: 'subjects', component: subjects_component_1.SubjectsComponent },
     { path: 'detail/:name', component: subject_detail_component_1.SubjectDetailComponent },
+    { path: 'search', component: subject_search_component_1.SubjectSearchComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -34,8 +34,6 @@ var SubjectSearchComponent = (function () {
     SubjectSearchComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.subject = this.searchTerms
-            .debounceTime(300) // wait 300ms after each keystroke before considering the term
-            .distinctUntilChanged() // ignore if next search term is same as previous
             .switchMap(function (term) { return term // switch to new observable each time the term changes
             ? _this.subjectSearchService.search(term)
             : Observable_1.Observable.of([]); })

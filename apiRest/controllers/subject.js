@@ -62,7 +62,7 @@ function addStudent (req, res ){
   const subj = new Subject({
     name : req.body.name,
     student : req.body.student,
-    _id : req.body._id,
+  //  _id : req.body._id,
   });       
 
   Subject.find({name: req.params.subjectName} ,(err,subjectInfo) => {

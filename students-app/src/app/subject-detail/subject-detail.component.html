@@ -30,10 +30,14 @@
     </tr>
 </table>
     <br>
-    <button (click)="goBack()"> Back </button>
+    <h2>Do you want to enrolment to {{p.name}} subject ? </h2>
+    <br>
+    <h3>Write your name.</h3>
     <input [(ngModel)]="p.student">
+    <br>
+    <button (click)="goBack()"> Back </button>
 
-     <button (click)="save(p)">Save</button>
+    <button (click)="save(p)">Save</button>
 </div>
 
 
