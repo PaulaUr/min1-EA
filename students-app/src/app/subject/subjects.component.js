@@ -37,6 +37,7 @@ var SubjectsComponent = (function () {
         // Pasamos la función de Callback como un argumento al metodo then() de la Promise
     };
     SubjectsComponent.prototype.ngOnInit = function () {
+        console.log('subjects.component cargado !');
         this.getProducts();
         //    console.log(this.products);
     };

@@ -18,14 +18,6 @@ export class SubjectService {
     private headers = new Headers({'Content-Type': 'application/json'});
     selectNom: Subjects;
 
-
-    /**** CORS */
-   /* private headers = new Headers();
-    headers.append( 'Content-Type', 'application/json' );
-    headers.append('Access-Control-Allow-Headers', 'Content-Type');
-    headers.append('Access-Control-Allow-Methods', '  POST');
-    headers.append('Access-Control-Allow-Origin', '*');
-    */
    constructor(private http: Http) {
    }
 
@@ -59,14 +51,15 @@ export class SubjectService {
      }*/
      update(product: Subjects): Promise<Subjects[]> {
         console.log(product);
+        console.log(product.name);
          const url = `${this.productsUrl}/${product.name}`;
          console.log(url);
          return this.http
              .put(url, JSON.stringify(product), {headers: this.headers})
-              .toPromise()
+             .toPromise()
              .then(() => product)
-             // .map(response => response.json().data as Products[])
-            .catch(this.handleError);
+             .catch(this.handleError);
+
      }
 
     private handleError(error: any): Promise<any> { // errores del http

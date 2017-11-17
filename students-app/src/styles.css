@@ -1,25 +1,21 @@
 /* Master Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+
+.navigation.col-lg-12{
+  margin-top: 10px;
 }
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+.jumbotron{
+  padding: 40px;
+  border-radius: 5px;
+
 }
-body {
-  margin: 2em;
+ol.subjects{
+  list-style-type: decimal ;
 }
-body, input[text], button {
-  color: #888;
-  font-family: Cambria, Georgia;
+ol li{
+  padding: 10px;
+  margin-left: 40px;
 }
-a {
-  cursor: pointer;
-  cursor: hand;
-}
+
 button {
   font-family: Arial;
   background-color: #eee;
@@ -37,9 +33,30 @@ button:disabled {
   color: #aaa;
   cursor: auto;
 }
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+  background-color:#fff;
+}
+table#t01 th {
+  background-color: #607D8B;
+  color: white;
+}
 
 /* Navigation link styles */
-nav a {
+/*nav a {
   padding: 5px 10px;
   text-decoration: none;
   margin-right: 10px;
@@ -57,9 +74,4 @@ nav a:hover {
 }
 nav a.active {
   color: #039be5;
-}
-
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
+}*/

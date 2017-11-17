@@ -16,13 +16,6 @@ require("rxjs/add/operator/map");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/catch");
 var SubjectService = (function () {
-    /**** CORS */
-    /* private headers = new Headers();
-     headers.append( 'Content-Type', 'application/json' );
-     headers.append('Access-Control-Allow-Headers', 'Content-Type');
-     headers.append('Access-Control-Allow-Methods', '  POST');
-     headers.append('Access-Control-Allow-Origin', '*');
-     */
     function SubjectService(http) {
         this.http = http;
         this.productsUrl = 'http://localhost:3000/api/subjects'; // URL to web api
@@ -57,6 +50,7 @@ var SubjectService = (function () {
       }*/
     SubjectService.prototype.update = function (product) {
         console.log(product);
+        console.log(product.name);
         var url = this.productsUrl + "/" + product.name;
         console.log(url);
         return this.http

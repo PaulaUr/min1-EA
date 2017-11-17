@@ -1,79 +1,16 @@
 
-<h2>My Products</h2>
-<ul class="subjects">
+<body>
+<h1>Subjects</h1>
+<ol class="subjects">
     <li *ngFor="let product of subjects" [class.selected]="product === selectedProduct"
         (click)="onSelect(product)">
-        <span class="badge">{{product.name}}</span> Titulacion:<span>{{product.titulacion}}</span>
+        <span class="badge">{{product.name}}</span>
     </li>
-</ul>
+</ol>
 <div *ngIf="selectedProduct">
-    <h2>
-        {{selectedProduct.name | uppercase}} is my subject
-    </h2>
+    <h3>
+        {{selectedProduct.name | uppercase}} selected!
+    </h3>
     <button (click)="gotoDetail()">View Details</button>
 </div>
-<br>
-<subject-search></subject-search>
-<br>
-<!--
-<div *ngFor="let p of products">
-    {{ p.price }}
-</div>
-<div class="container">
-    <label> Matricula: </label>
-    <form [formGroup]="prodForm" (ngSubmit)="onSubmit()" novalidate>
-        <div class="form-group">
-            <label class="center-block">Name of the student:
-            <input class="form-control" formControlName="name">
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="center-block">Email:
-            <input class="form-control" formControlName="email">
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="center-block">Subject:
-            <input class="form-control" formControlName="subject">
-            </label>
-        </div>
-
-        <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-    <p>Form value: {{ prodForm.value | json }}</p>
-    <p>Form status: {{ prodForm.status | json }}</p>
-</div>
-
-<!--<div *ngIf=" canShow$ | async">
-    <form [formGroup]="formProds" novalidate (ngSubmit)="add(formProds.value, formProds.valid)">
-        <div class="form-group">
-        <label>Name of the subject:</label>
-        <input type="text" formControlName="name">
-        <div *ngIf = "formProds.touched && formProds.invalid">
-                <div *ngIf="formProds.controls['name'].errors" class="alert alert-danger"> Name is required </div>
-            </div>
-        </div>
-        <div class="form-group">
-        <label>Price:</label>
-        <input type="text" class="form-control" formControlName="price">
-        <div *ngIf = "formProds.touched && formProds.invalid">
-            <div *ngIf="formProds.controls['price'].errors" class="alert alert-danger"> Price is required </div>
-        </div>
-        </div>
-        <div class="form-group">
-            <label>Picture:</label>
-            <input type="text" formControlName="picture">
-        </div>
-        <div class="form-group">
-            <label>Category:</label>
-            <input type="text" formControlName="category">
-        </div>
-        <div class="form-group">
-            <label>Description:</label>
-            <input type="text" formControlName="description">
-        </div>
-
-        <button type="submit">Submit</button>
-    </form>
-</div>-->
-
+</body>

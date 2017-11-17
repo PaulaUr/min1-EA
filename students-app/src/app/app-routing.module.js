@@ -9,11 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var subjects_component_1 = require("./subject/subjects.component");
-var product_detail_component_1 = require("./product-detail/product-detail.component");
+var subject_detail_component_1 = require("./subject-detail/subject-detail.component");
 var routes = [
     { path: '', redirectTo: '/subjects', pathMatch: 'full' },
-    { path: 'detail/:name', component: product_detail_component_1.ProductDetailComponent },
-    { path: 'subjects', component: subjects_component_1.SubjectsComponent }
+    { path: 'subjects', component: subjects_component_1.SubjectsComponent },
+    { path: 'detail/:name', component: subject_detail_component_1.SubjectDetailComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

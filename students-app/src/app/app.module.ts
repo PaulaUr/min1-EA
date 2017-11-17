@@ -4,11 +4,10 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms'; // <-- NgMo
 import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { SubjectDetailComponent } from './subject-detail/subject-detail.component';
 import {SubjectService} from './subject.service';
 import { SubjectsComponent } from './subject/subjects.component';
 import { SubjectSearchComponent} from './subject-search/subject-search.component';
-
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -21,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   declarations: [
     AppComponent,
-      ProductDetailComponent,
+      SubjectDetailComponent,
       SubjectsComponent,
       SubjectSearchComponent
   ],

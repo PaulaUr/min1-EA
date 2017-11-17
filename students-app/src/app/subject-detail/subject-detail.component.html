@@ -1,0 +1,40 @@
+<div *ngFor="let p of subject">
+    <h2>{{p.name}} details!</h2>
+   <!-- <div><label>Name: </label>{{p.name}}
+    </div>
+    <div>
+        <label>Titulacion: </label>
+       <br>{{p.titulacion}}
+    </div>
+    <div><label>Cuatrimestre: </label>
+        <br>{{p.cuatrimestre}}
+    </div>
+    <div><label>Estudiantes: </label>
+        <br>
+        {{p.student}}
+        <br>
+        <input [(ngModel)]="p.student">
+    </div>-->
+<table id="t01">
+    <tr>
+        <th>Nombre</th>
+        <th>Titulación</th>
+        <th>Cuatrimestre</th>
+        <th>Estudiantes</th>
+    </tr>
+    <tr>
+        <td>{{p.name}}</td>
+        <td>{{p.titulacion}}</td>
+        <td>{{p.cuatrimestre}}</td>
+        <td>{{p.student}}</td>
+    </tr>
+</table>
+    <br>
+    <button (click)="goBack()"> Back </button>
+    <input [(ngModel)]="p.student">
+
+     <button (click)="save(p)">Save</button>
+</div>
+
+
+

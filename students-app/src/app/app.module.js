@@ -11,7 +11,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms"); // <-- NgModel lives here
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
-var product_detail_component_1 = require("./product-detail/product-detail.component");
+var subject_detail_component_1 = require("./subject-detail/subject-detail.component");
 var subject_service_1 = require("./subject.service");
 var subjects_component_1 = require("./subject/subjects.component");
 var subject_search_component_1 = require("./subject-search/subject-search.component");
@@ -32,7 +32,7 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            product_detail_component_1.ProductDetailComponent,
+            subject_detail_component_1.SubjectDetailComponent,
             subjects_component_1.SubjectsComponent,
             subject_search_component_1.SubjectSearchComponent
         ],
