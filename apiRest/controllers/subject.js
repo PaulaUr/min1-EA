@@ -18,7 +18,23 @@ function getSubject (req, res){
        }
          })
    }
-   
+
+   function getSubjectByBachelor (req, res){
+    // let productId = req.params.productId
+     Subject.find({ titulacion: req.params.subjectName }, (err, subject) => {
+     //  Product.findOne(productName, (err, product) =>{
+     //  console.log(req.params.productName)
+     if (err) 
+     return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
+      else if(!subject)
+       return res.status(404).send({message:`El producto no existe`});
+       else{
+         req.subject = subject
+         res.status(200).send(subject);
+         //res.json(product)  
+       }
+         })
+   }  
 
 function getSubjects(req,res) {
     Subject.find({}, (err, subjects) => {
@@ -115,6 +131,7 @@ function addStudent (req, res ){
 module.exports = {
     getSubjects,
     getSubject,
+    getSubjectByBachelor,
     saveSubject,
     addStudent
 };

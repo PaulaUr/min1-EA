@@ -20,6 +20,8 @@ api.put('/student/:studentName', studentCtrl.updateStudent);
 
 api.get('/subjects', subjectCtrl.getSubjects);
 api.get('/subjects/:subjectName', subjectCtrl.getSubject);
+api.get('/subjects/titulacion/:subjectName', subjectCtrl.getSubjectByBachelor);
+
 api.post('/registerSubj', subjectCtrl.saveSubject);
 api.put('/subjects/:subjectName', subjectCtrl.addStudent);
 
