@@ -5,11 +5,15 @@
     <div>
         <div *ngFor="let sub of subject | async"
              (click)="gotoDetail(sub)" class="search-result" >
-            {{sub.name}}
+           <h3>{{sub.name}}</h3>
         </div>
     </div>
     <br>
 </div>
+<br/>
+
+
+
 </body>
 <!--<ul class="products">
     <li *ngFor="let pro of subject">

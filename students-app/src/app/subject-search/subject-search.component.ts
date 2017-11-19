@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subjects } from '../subject';
 import { Subject }           from 'rxjs/Subject';
@@ -28,12 +28,13 @@ export class SubjectSearchComponent implements OnInit {
         private subjectSearchService: SubjectSearchService,
         private router: Router) {}
 
-
     // Push a search term into the observable stream.
     search(term: string): void {
         // cada llamada a search() pone un nuevo String en este flujo Seubject observable llamando a next()
         this.searchTerms.next(term);
     }
+
+
     ngOnInit(): void {
         this.subject = this.searchTerms
             .switchMap(term => term   // switch to new observable each time the term changes
@@ -47,6 +48,9 @@ export class SubjectSearchComponent implements OnInit {
                 return Observable.of<Subjects[]>([]);
             });
     }
+
+
+
     gotoDetail(subject: Subjects): void {
         let link = ['/detail', subject.name];
         this.router.navigate(link);

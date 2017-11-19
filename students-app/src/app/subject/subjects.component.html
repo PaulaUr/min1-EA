@@ -1,5 +1,40 @@
+<div class="row">
+    <div class="col-log-1">Buscar</div>
+    <input type="text" [(ngModel)]="buscar">
+</div>
+<br/>
+<div class="row">
+    <div class="col-log-1">Buscar</div>
+    <input type="text" [(ngModel)]="buscar1">
+</div>
+<br/>
+<table id="t01">
+    <thead class="thead-default">
+    <tr>
+        <th>Nombre:</th>
+        <th>Titulación:</th>
+        <th>Cuatrimestre</th>
+        <th>Students:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let subject of subjects | searchs: buscar:buscar1" [class.selected]="subject === selectedProduct"
+        (click)="onSelect(subject)">
+        <td>{{subject.name}}</td>
+        <td>{{subject.titulacion}}</td>
+        <td>{{subject.cuatrimestre}}</td>
+        <td>{{subject.student}}</td>
+    </tr>
+    </tbody>
+</table>
+<div *ngIf="selectedProduct">
+    <h3>
+        {{selectedProduct.name | uppercase}} selected!
+    </h3>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
 
-<body>
+<!--
 <h1>Subjects</h1>
 <ol class="subjects">
     <li *ngFor="let product of subjects" [class.selected]="product === selectedProduct"
@@ -13,4 +48,4 @@
     </h3>
     <button (click)="gotoDetail()">View Details</button>
 </div>
-</body>
+-->

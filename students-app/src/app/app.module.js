@@ -15,6 +15,7 @@ var subject_detail_component_1 = require("./subject-detail/subject-detail.compon
 var subject_service_1 = require("./subject.service");
 var subjects_component_1 = require("./subject/subjects.component");
 var subject_search_component_1 = require("./subject-search/subject-search.component");
+var search_pipe_component_1 = require("./search-pipe.component");
 var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
     function AppModule() {
@@ -34,7 +35,8 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             subject_detail_component_1.SubjectDetailComponent,
             subjects_component_1.SubjectsComponent,
-            subject_search_component_1.SubjectSearchComponent
+            subject_search_component_1.SubjectSearchComponent,
+            search_pipe_component_1.SearchPipeComponent
         ],
         providers: [subject_service_1.SubjectService],
         bootstrap: [app_component_1.AppComponent]

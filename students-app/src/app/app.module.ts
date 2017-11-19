@@ -8,6 +8,7 @@ import { SubjectDetailComponent } from './subject-detail/subject-detail.componen
 import {SubjectService} from './subject.service';
 import { SubjectsComponent } from './subject/subjects.component';
 import { SubjectSearchComponent} from './subject-search/subject-search.component';
+import { SearchPipeComponent } from './search-pipe.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
       SubjectDetailComponent,
       SubjectsComponent,
-      SubjectSearchComponent
+      SubjectSearchComponent,
+      SearchPipeComponent
   ],
     providers: [ SubjectService ],
   bootstrap: [ AppComponent ]

@@ -13,14 +13,7 @@ body{
   margin-right: 20px;
 
 }
-ol.subjects{
-  list-style-type: decimal ;
-}
-ol li{
-  padding: 10px;
-  margin-left: 40px;
 
-}
 
 button {
   font-family: Arial;
