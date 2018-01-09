@@ -6,7 +6,7 @@ const subjectCtrl = require('../controllers/subject');
 const cors = require('cors')
 
 let corsOptions = { 
-    origin: 'http://localhost:3001',
+    origin: 'http://localhost:8100',
     optionsSuccessStatus: 200
 }
 
@@ -21,6 +21,9 @@ api.put('/student/:studentName', studentCtrl.updateStudent);
 api.get('/subjects', subjectCtrl.getSubjects);
 api.get('/subjects/:subjectName', subjectCtrl.getSubject);
 api.get('/subjects/titulacion/:subjectName', subjectCtrl.getSubjectByBachelor);
+api.get('/subjects/cuatrimestre/:subjectName', subjectCtrl.getSubjectBySemester);
+
+
 
 api.post('/registerSubj', subjectCtrl.saveSubject);
 api.put('/subjects/:subjectName', subjectCtrl.addStudent);

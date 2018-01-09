@@ -8,9 +8,10 @@ const SubjectSchema = Schema({
     name: { type: String },
     titulacion: String,
     cuatrimestre: String,
+    cantidad: Number,
     //student: String
-    student: [ String ]
-    //{ type: Schema.ObjectId, ref: 'Student' }
+   // student: [ String ]
+    student: [{ type: Schema.Types.String, ref: 'Student' }]
 
 });
 
